@@ -20,5 +20,5 @@ public class Customer
     public DateOnly ModifiedOn { get; set; }
 
     // Navigation
-    public required ICollection<Quotation> Quotations { get; set; }
+    public ICollection<Quotation> Quotations { get; set; } = new List<Quotation>();
 }

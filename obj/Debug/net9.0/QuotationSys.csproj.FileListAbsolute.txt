@@ -234,3 +234,4 @@ C:\Users\barak\RiderProjects\QuotationSys\Quotationsys\obj\Debug\net9.0\Quotatio
 C:\Users\barak\RiderProjects\QuotationSys\Quotationsys\obj\Debug\net9.0\QuotationSys.genruntimeconfig.cache
 C:\Users\barak\RiderProjects\QuotationSys\Quotationsys\obj\Debug\net9.0\ref\QuotationSys.dll
 C:\Users\barak\RiderProjects\QuotationSys\quotationsys\obj\Debug\net9.0\compressed\w4w3y600go-ckwomj29tj.gz
+C:\Users\barak\RiderProjects\QuotationSys\quotationsys\obj\Debug\net9.0\QuotationSys.sourcelink.json

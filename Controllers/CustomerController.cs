@@ -72,11 +72,10 @@ namespace QuotationSysAuth.Controllers
         {
             return View();
         }
-
-        // POST: Customers/Create
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CompanyName,ContactPerson,Email,PhoneNumber,Address")] Customer customer)
+        public async Task<IActionResult> Create(Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -86,10 +85,12 @@ namespace QuotationSysAuth.Controllers
                 TempData["SuccessMessage"] = "Customer created successfully!";
                 return RedirectToAction(nameof(Index));
             }
+
+            TempData["ErrorMessage"] = "Please check all required fields.";
             return View(customer);
         }
 
-        // GET: Customers/Edit/5
+        
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -104,11 +105,10 @@ namespace QuotationSysAuth.Controllers
             }
             return View(customer);
         }
-
-        // POST: Customers/Edit/5
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CompanyName,ContactPerson,Email,PhoneNumber,Address,City,Country,TaxId,Notes")] Customer customer)
+        public async Task<IActionResult> Edit(int id, Customer customer)
         {
             if (id != customer.CustomerId)
             {
@@ -119,8 +119,16 @@ namespace QuotationSysAuth.Controllers
             {
                 try
                 {
-                    customer.ModifiedOn = DateOnly.FromDateTime(DateTime.Now);
-                    context.Update(customer);
+                    var existingCustomer = await context.Customers.FindAsync(id);
+                    if (existingCustomer == null) return NotFound();
+                    
+                    existingCustomer.CompanyName = customer.CompanyName;
+                    existingCustomer.ContactPerson = customer.ContactPerson;
+                    existingCustomer.Email = customer.Email;
+                    existingCustomer.PhoneNumber = customer.PhoneNumber;
+                    existingCustomer.Address = customer.Address;
+                    existingCustomer.ModifiedOn = DateOnly.FromDateTime(DateTime.Now);
+
                     await context.SaveChangesAsync();
                     TempData["SuccessMessage"] = "Customer updated successfully!";
                 }
@@ -137,10 +145,10 @@ namespace QuotationSysAuth.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             return View(customer);
         }
 
-        // GET: Customers/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuotationSys")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0010ff5b998538853a0ebe3748a350dd8d2a09af")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuotationSys")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuotationSys")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
