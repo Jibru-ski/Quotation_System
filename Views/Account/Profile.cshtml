@@ -1,0 +1,157 @@
+﻿@model QuotationAuth.Models.ProfileViewModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">@ViewData["Title"]</h2>
+
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success" role="alert">
+                            @TempData["SuccessMessage"]
+                        </div>
+                    }
+
+                    <div class="row mb-4">
+                        <div class="col-md-4 text-center">
+                            @if (!string.IsNullOrEmpty(Model.ProfilePicture))
+                            {
+                                <img src="@Model.ProfilePicture" alt="Profile Picture" class="img-fluid rounded-circle mb-3" style="max-width: 150px;" />
+                            }
+                            else
+                            {
+                                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 150px; height: 150px; margin: 0 auto;">
+                                    <i class="fas fa-user fa-3x text-muted"></i>
+                                </div>
+                            }
+                            <form asp-action="UpdateProfilePicture" method="post" enctype="multipart/form-data" class="mt-2">
+                                <div class="input-group">
+                                    <input type="file" name="profilePicture" class="form-control" accept="image/*" />
+                                    <button type="submit" class="btn btn-primary">Update Picture</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-8">
+                            <h3 class="mb-3">@Model.FirstName @Model.LastName</h3>
+                            <p class="text-muted mb-2"><i class="fas fa-envelope me-2"></i>@Model.Email</p>
+                            @if (!string.IsNullOrEmpty(Model.PhoneNumber))
+                            {
+                                <p class="text-muted mb-2"><i class="fas fa-phone me-2"></i>@Model.PhoneNumber</p>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.Bio))
+                            {
+                                <p class="mt-3">@Model.Bio</p>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="mb-3">Personal Information</h4>
+                            <dl class="row">
+                                <dt class="col-sm-4">First Name</dt>
+                                <dd class="col-sm-8">@Model.FirstName</dd>
+
+                                <dt class="col-sm-4">Last Name</dt>
+                                <dd class="col-sm-8">@Model.LastName</dd>
+
+                                <dt class="col-sm-4">Date of Birth</dt>
+                                <dd class="col-sm-8">@(Model.DateOfBirth?.ToString("MMMM d, yyyy") ?? "Not provided")</dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="mb-3">Contact Information</h4>
+                            <dl class="row">
+                                <dt class="col-sm-4">Address</dt>
+                                <dd class="col-sm-8">@(Model.Address ?? "Not provided")</dd>
+
+                                @* <dt class="col-sm-4">City</dt> *@
+                                @* <dd class="col-sm-8">@(Model.City ?? "Not provided")</dd> *@
+                                @* *@
+                                @* <dt class="col-sm-4">Country</dt> *@
+                                @* <dd class="col-sm-8">@(Model.Country ?? "Not provided")</dd> *@
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateProfileModal">
+                            Update Profile
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Update Profile Modal -->
+<div class="modal fade" id="updateProfileModal" tabindex="-1" aria-labelledby="updateProfileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateProfileModalLabel">Update Profile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form asp-action="Profile" method="post">
+                <div class="modal-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="PhoneNumber" class="form-label">Phone Number</label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Address" class="form-label">Address</label>
+                        <input asp-for="Address" class="form-control" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+
+                    @* <div class="row"> *@
+                    @*     <div class="col-md-6"> *@
+                    @*         <div class="mb-3"> *@
+                    @*             <label asp-for="City" class="form-label">City</label> *@
+                    @*             <input asp-for="City" class="form-control" /> *@
+                    @*             <span asp-validation-for="City" class="text-danger"></span> *@
+                    @*         </div> *@
+                    @*     </div> *@
+                    @*     <div class="col-md-6"> *@
+                    @*         <div class="mb-3"> *@
+                    @*             <label asp-for="Country" class="form-label">Country</label> *@
+                    @*             <input asp-for="Country" class="form-control" /> *@
+                    @*             <span asp-validation-for="Country" class="text-danger"></span> *@
+                    @*         </div> *@
+                    @*     </div> *@
+                    @* </div> *@
+
+                    <div class="mb-3">
+                        <label asp-for="DateOfBirth" class="form-label">Date of Birth</label>
+                        <input asp-for="DateOfBirth" class="form-control" type="date" />
+                        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Bio" class="form-label">Bio</label>
+                        <textarea asp-for="Bio" class="form-control" rows="3"></textarea>
+                        <span asp-validation-for="Bio" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+} 
