@@ -1,0 +1,40 @@
+﻿@model IEnumerable<QuotationSys.Models.Quotation>
+
+@{
+    ViewData["Title"] = "Quotations";
+}
+
+<h1>Quotations</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Quotation</a>
+
+</p>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Customer</th>
+        <th>Created At</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var quotation in Model)
+    {
+        <tr>
+            <td>@quotation.Customer.CompanyName</td>
+            <td>@quotation.CreatedAt.ToString("dd/MM/yyyy")</td>
+            <td>@quotation.Status</td>
+            <td>@quotation.QuotationItems.Sum(qi => qi.Quantity * qi.UnitPrice):C</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@quotation.QuotationId">Details</a> |
+                <a asp-action="Edit" asp-route-id="@quotation.QuotationId">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@quotation.QuotationId">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

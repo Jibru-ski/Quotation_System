@@ -1,0 +1,60 @@
+﻿@model QuotationSys.Models.Quotation
+
+@{
+    ViewData["Title"] = "Quotation Details";
+}
+
+<h1>Quotation Details</h1>
+
+<div>
+    <h4>Quotation</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Customer</dt>
+        <dd class="col-sm-10">@Model.Customer.CompanyName</dd>
+
+        <dt class="col-sm-2">Created At</dt>
+        <dd class="col-sm-10">@Model.CreatedAt.ToString("dd/MM/yyyy")</dd>
+
+        <dt class="col-sm-2">Status</dt>
+        <dd class="col-sm-10">@Model.Status</dd>
+    </dl>
+</div>
+
+<h4>Quotation Items</h4>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.QuotationItems)
+    {
+        <tr>
+            <td>@item.Product?.Name</td>
+            <td>@item.Description</td>
+            <td>@item.Quantity</td>
+            <td>@item.UnitPrice.ToString("C")</td>
+            <td>@(item.Quantity * item.UnitPrice).ToString("C")</td>
+        </tr>
+    }
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="4" class="text-end"><strong>Total:</strong></td>
+        <td>
+            @Model.QuotationItems.Sum(q => q.Quantity * q.UnitPrice).ToString("C")
+        </td>
+    </tr>
+    </tfoot>
+</table>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.QuotationId" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</p>

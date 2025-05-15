@@ -13,14 +13,12 @@ public class QuotationItem
     public decimal UnitPrice { get; set; }
 
     public decimal Total => Quantity * UnitPrice;
-
-    // Foreign key to Quotation
+    
     public int QuotationId { get; set; }
 
     [ForeignKey("QuotationId")]
-    public required Quotation Quotation { get; set; }
+    public Quotation Quotation { get; set; }
 
-    // Optional link to a product
     public int? ProductId { get; set; }
 
     [ForeignKey("ProductId")]

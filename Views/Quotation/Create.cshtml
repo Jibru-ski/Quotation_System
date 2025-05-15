@@ -1,0 +1,115 @@
+﻿@model QuotationSys.Models.Quotation
+
+@{
+    ViewData["Title"] = "Create Quotation";
+    var products = ViewData["Products"] as SelectList;
+    var customers = ViewData["CustomerId"] as SelectList;
+}
+
+<h1>Create Quotation</h1>
+
+<form asp-action="Create" method="post">
+    <div class="select-container">
+        <div class="form-group mb-3">
+            <label asp-for="CustomerId" class="form-label">Customer</label>
+            <select asp-for="CustomerId" class="form-control" asp-items="customers"></select>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Status" class="form-label">Status</label>
+            <input asp-for="Status" class="form-control"/>
+        </div>
+    </div>
+    
+    <h4>Quotation Items</h4>
+    <div id="items-container">
+        <div class="card p-3 mb-3 item-block" id="item-0">
+            <div class="row">
+                <input type="hidden" name="QuotationItems[0].QuotationItemId" value="0"/>
+
+                <div class="col-md-3 mb-2">
+                    <select name="QuotationItems[0].ProductId" class="form-select">
+                        <option value="">-- Select Product --</option>
+                        @foreach (var p in products!)
+                        {
+                            <option value="@p.Value">@p.Text</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="col-md-2 mb-2">
+                    <input type="number" name="QuotationItems[0].Quantity" class="form-control" placeholder="Qty"/>
+                </div>
+
+                <div class="col-md-2 mb-2">
+                    <input type="number" step="0.01" name="QuotationItems[0].UnitPrice" class="form-control" placeholder="Unit Price"/>
+                </div>
+
+                <div class="col-md-4 mb-2">
+                    <input type="text" name="QuotationItems[0].Description" class="form-control" placeholder="Description"/>
+                </div>
+
+                <div class="col-md-1 mb-2 d-flex align-items-center">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(0)">X</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3 d-flex gap-2">
+        <button type="button" class="btn btn-secondary" onclick="addItem()">Add Item</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Discard</a>
+    </div>
+
+    <input type="submit" value="Create" class="btn btn-primary"/>
+</form>
+
+@section Scripts {
+    <script>
+        let itemIndex = 1;
+        const productOptions = `@Html.Raw(string.Join("", (products ?? new SelectList(Enumerable.Empty<SelectListItem>())).Select(p => $"<option value='{p.Value}'>{p.Text}</option>")))`;
+
+        function addItem() {
+            const container = document.getElementById("items-container");
+
+            const html = `
+                <div class="card p-3 mb-3 item-block" id="item-${itemIndex}">
+                    <div class="row">
+                        <input type="hidden" name="QuotationItems[${itemIndex}].QuotationItemId" value="0" />
+
+                        <div class="col-md-3 mb-2">
+                            <select name="QuotationItems[${itemIndex}].ProductId" class="form-select">
+                                <option value="">-- Select Product --</option>
+                                ${productOptions}
+                            </select>
+                        </div>
+
+                        <div class="col-md-2 mb-2">
+                            <input type="number" name="QuotationItems[${itemIndex}].Quantity" class="form-control" placeholder="Qty" />
+                        </div>
+
+                        <div class="col-md-2 mb-2">
+                            <input type="number" step="0.01" name="QuotationItems[${itemIndex}].UnitPrice" class="form-control" placeholder="Unit Price" />
+                        </div>
+
+                        <div class="col-md-4 mb-2">
+                            <input type="text" name="QuotationItems[${itemIndex}].Description" class="form-control" placeholder="Description" />
+                        </div>
+
+                        <div class="col-md-1 mb-2 d-flex align-items-center">
+                            <button type="button" class="btn btn-danger btn-sm" onclick="removeItem(${itemIndex})">x</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            container.insertAdjacentHTML("beforeend", html);
+            itemIndex++;
+        }
+
+        function removeItem(index) {
+            const item = document.getElementById(`item-${index}`);
+            if (item) item.remove();
+        }
+    </script>
+}

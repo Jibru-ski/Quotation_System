@@ -17,69 +17,113 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = QuotationSysAuth
 build_property.RootNamespace = QuotationSysAuth
-build_property.ProjectDir = C:\Users\barak\RiderProjects\QuotationSys\quotationsys\
+build_property.ProjectDir = C:\Users\barak\RiderProjects\QuotationSys\QuotationSys\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\barak\RiderProjects\QuotationSys\quotationsys
+build_property.MSBuildProjectDirectory = C:\Users\barak\RiderProjects\QuotationSys\QuotationSys
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/Account/Login.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Pages/Quotation/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVvdGF0aW9uXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/Account/Profile.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/Account/Register.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/Customers/Create.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Customers/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/Customers/Delete.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Customers/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/Customers/Edit.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Customers/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/Customers/Index.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Customers/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/Home/Index.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/Home/Privacy.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/Shared/Error.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Products/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Products/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Quotation/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVvdGF0aW9uXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Quotation/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVvdGF0aW9uXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Quotation/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVvdGF0aW9uXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Quotation/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVvdGF0aW9uXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Quotation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVvdGF0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/_ViewImports.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/_ViewStart.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/barak/RiderProjects/QuotationSys/quotationsys/Views/Shared/_Layout.cshtml]
+[C:/Users/barak/RiderProjects/QuotationSys/QuotationSys/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-9ezd6tr000

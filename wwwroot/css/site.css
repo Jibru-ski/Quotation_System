@@ -31,3 +31,9 @@ body {
   text-align: start;
 }
 
+.select-container{
+  display: inline-flex;
+  gap: 1rem;
+  padding-bottom: 20px;
+}
+
